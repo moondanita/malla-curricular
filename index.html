@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malla Curricular Interactiva</title>
+  <style>
+    :root {
+      --lavender-blush: #f4dfe6;
+      --amaranth-pink: #e0a3bb;
+      --azure: #d6e6e7;
+      --citron: #c5ccb2;
+      --moss-green: #97a13b;
+      --gray: #4e4e4e;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: var(--azure);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--amaranth-pink);
+      color: var(--white);
+      padding: 1.2rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .ciclo {
+      padding: 1rem;
+      border-top: 4px solid var(--moss-green);
+      border-bottom: 2px dashed var(--moss-green);
+      background-color: var(--lavender-blush);
+    }
+
+    .semestre {
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 10px;
+      background-color: var(--citron);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .semestre h3 {
+      margin-top: 0;
+      color: var(--gray);
+    }
+
+    .materia {
+      background-color: var(--white);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 5px solid var(--amaranth-pink);
+      cursor: pointer;
+    }
+
+    .materia.aprobada {
+      opacity: 0.6;
+      text-decoration: line-through;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modulo {
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-weight: bold;
+    }
+
+    .creditos {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--gray);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    CICLO INICIAL (Semestres 1-2) · CICLO DE PROFUNDIZACIÓN (Semestres 3-5) · CICLO DE GRADUACIÓN (Semestres 6-8)
+  </header>
+
+  <div class="ciclo">
+    <div class="semestre">
+      <h3>Primer Semestre</h3>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Curso Introductorio</strong><span class="modulo">PI</span><span class="creditos">2 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Comprensión Lectora y Escritura en Español</strong><span class="modulo">LM</span><span class="creditos">2 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Introducción al Estudio del Audiovisual</strong><span class="modulo">LM</span><span class="creditos">7 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Teoría de la Comunicación I</strong><span class="modulo">TC</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Historia Contemporánea</strong><span class="modulo">SCP</span><span class="creditos">7 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Pensamiento Social</strong><span class="modulo">SCP</span><span class="creditos">6 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Introducción a la Universidad</strong><span class="modulo">PI</span><span class="creditos">4 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Introducción a la Epistemología</strong><span class="modulo">M</span><span class="creditos">8 créditos</span></div></div>
+    </div>
+
+    <div class="semestre">
+      <h3>Segundo Semestre</h3>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Economía y Política</strong><span class="modulo">SCP</span><span class="creditos">7 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Discurso, Técnica y Comunicación</strong><span class="modulo">TC</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Metodología de Investigación</strong><span class="modulo">M</span><span class="creditos">8 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Introducción a las Profesiones</strong><span class="modulo">PI</span><span class="creditos">7 créditos</span></div></div>
+    </div>
+  </div>
+
+  <div class="ciclo">
+    <div class="semestre">
+      <h3>Tercer Semestre</h3>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Lengua I</strong><span class="modulo">LM</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Comunicación Sonora</strong><span class="modulo">LM</span><span class="creditos">6 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Ontologías de la Comunicación</strong><span class="modulo">SCP</span><span class="creditos">6 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Estadística Básica</strong><span class="modulo">M</span><span class="creditos">8 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Introducción a la Comunicación Publicitaria</strong><span class="modulo">PI</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Pure Data Música Algorítmica</strong><span class="modulo">FA</span><span class="creditos">4 créditos</span></div></div>
+    </div>
+
+    <div class="semestre">
+      <h3>Cuarto Semestre</h3>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Comprensión Lectora en Inglés</strong><span class="modulo">LM</span><span class="creditos">6 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Teoría del Cine y Medios</strong><span class="modulo">TC</span><span class="creditos">8 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Diseño y Análisis</strong><span class="modulo">M</span><span class="creditos">8 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Diseño Gráfico</strong><span class="modulo">LM</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Atención de Cuentas</strong><span class="modulo">PI</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Edición I</strong><span class="modulo">LM</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Herramientas Participativas</strong><span class="modulo">TC</span><span class="creditos">9 créditos</span></div></div>
+    </div>
+
+    <div class="semestre">
+      <h3>Quinto Semestre</h3>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Lengua II</strong><span class="modulo">LM</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Semiótica</strong><span class="modulo">TC</span><span class="creditos">8 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Creatividad Publicitaria I</strong><span class="modulo">PI</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Edición II</strong><span class="modulo">LM</span><span class="creditos">9 créditos</span></div></div>
+    </div>
+  </div>
+
+  <div class="ciclo">
+    <div class="semestre">
+      <h3>Sexto Semestre</h3>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Creatividad Publicitaria II</strong><span class="modulo">PI</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Planificación de Medios</strong><span class="modulo">PI</span><span class="creditos">7 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Sociedad, Cultura y TIC</strong><span class="modulo">SCP</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Diseño de Proyectos</strong><span class="modulo">M</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Debates en Investigación</strong><span class="modulo">TC</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Comunicación y Políticas Públicas</strong><span class="modulo">SCP</span><span class="creditos">9 créditos</span></div></div>
+    </div>
+
+    <div class="semestre">
+      <h3>Séptimo Semestre</h3>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Marketing Básico</strong><span class="modulo">PI</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Publicidad Digital</strong><span class="modulo">PI</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Seminario TFG I</strong><span class="modulo">PI</span><span class="creditos">10 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Taller Escritura TFG</strong><span class="modulo">LM</span><span class="creditos">4 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Libertades Informativas</strong><span class="modulo">SCP</span><span class="creditos">9 créditos</span></div></div>
+    </div>
+
+    <div class="semestre">
+      <h3>Octavo Semestre</h3>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Seminario TFG II</strong><span class="modulo">PI</span><span class="creditos">10 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Marketing Estratégico</strong><span class="modulo">PI</span><span class="creditos">9 créditos</span></div></div>
+      <div class="materia" onclick="toggleAprobada(this)"><div class="info"><strong>Trabajo Final de Grado</strong><span class="modulo">TFG</span><span class="creditos">40 créditos</span></div></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAprobada(element) {
+      element.classList.toggle('aprobada');
+    }
+  </script>
+</body>
+</html>
